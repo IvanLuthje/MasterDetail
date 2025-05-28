@@ -8,6 +8,8 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.TextView
 import com.example.masterdetail.placeholder.PlaceholderContent
 import com.example.masterdetail.databinding.FragmentItemDetailBinding
@@ -57,19 +59,36 @@ class ItemDetailFragment : Fragment() {
         }
     }
 
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//
+//        _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
+//        val rootView = binding.root
+//
+//        toolbarLayout = binding.toolbarLayout
+//        itemDetailTextView = binding.itemDetail
+//
+//        updateContent()
+//        rootView.setOnDragListener(dragListener)
+//
+//        return rootView
+//    }
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
-        val rootView = binding.root
-
-        toolbarLayout = binding.toolbarLayout
-        itemDetailTextView = binding.itemDetail
-
-        updateContent()
-        rootView.setOnDragListener(dragListener)
+        val rootView = inflater.inflate(R.layout.fragment_item_detail, container, false)
+        val mItem = null;
+        // Mostrar el contenido en un WebView
+        if (mItem != null) {
+            val webView = rootView.findViewById<WebView>(R.id.website_detail)
+            webView.webViewClient = WebViewClient()
+            webView.loadUrl(mItem!!.website_url)
+        }
 
         return rootView
     }

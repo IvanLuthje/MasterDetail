@@ -26,7 +26,7 @@ object PlaceholderContent {
         addItem(0, "Amazon", "https://www.amazon.com")
         addItem(1, "Google", "https://www.google.com")
         addItem(2, "YouTube", "https://www.youtube.com")
-        addItem(3, "Wikipedia", "https://www.wikipedia.org")
+        addItem(3, "Android", "https://www.android.org")
         addItem(4, "Stack Overflow", "https://stackoverflow.com")
         addItem(5, "GitHub", "https://github.com")
         addItem(6, "Reddit", "https://www.reddit.com")
